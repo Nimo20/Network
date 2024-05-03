@@ -4,7 +4,7 @@ const userController = {
     // /api/users
     // get all users
     getAllUser(req, res) {
-        User.find({})
+        User.findOneAndDelete({})
             .select('-__v')
             .sort({ _id: -1 })
             .then(dbUserData => res.json(dbUserData))
